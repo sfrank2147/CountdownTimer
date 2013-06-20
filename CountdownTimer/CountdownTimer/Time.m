@@ -52,7 +52,8 @@
 //changes the second.  Returns true if time is up, false otherwise.
 -(bool) nextSecond {
     self.second--;
-    if(self.second==0 && self.minute==0 && self.hour==0) {
+    if(self.second<=0 && self.minute<=0 && self.hour<=0) {
+        self.second = 0;
         return true;
     }
     if(self.second < 0) {

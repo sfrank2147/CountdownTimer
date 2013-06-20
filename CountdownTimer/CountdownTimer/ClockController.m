@@ -22,6 +22,9 @@
 
 -(IBAction) startTimer:(id) sender{
     //initialize starting times
+    if(self->startTimer != nil) {
+        return; //don't start again if timer is running
+    }
     int startingHour = [hourField intValue];
     int startingMinute = [minuteField intValue];
     int startingSecond = [secondField intValue];
